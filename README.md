@@ -7,9 +7,7 @@
 A pixel-art slime desktop pet that reacts to your Cursor IDE / agent activity in real time. Frameless, transparent, always on top, no Dock icon.
 
 <p align="center">
-  <img src="docs/screenshots/demo.png" alt="demo" width="320">
-  <br>
-  <em>(replace <code>docs/screenshots/demo.png</code> with your own screenshot)</em>
+  <img src="docs/screenshots/demo.png" alt="Cursor Slime in action — pixel slime with a live stats bubble showing project, model, token estimate, tools/min, last tool and idle time" width="340">
 </p>
 
 ## What it does
