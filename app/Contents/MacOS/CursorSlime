@@ -1,0 +1,16 @@
+#!/bin/bash
+# CursorSlime launcher — single-instance guard, uses the bundled venv.
+PET="$HOME/.cursor/pet/slime.py"
+PY="$HOME/.cursor/pet/venv/bin/python3"
+
+if /usr/bin/pgrep -f "pet/slime.py" >/dev/null 2>&1; then
+    /usr/bin/osascript -e 'display notification "Slime is already running. Use the X button on the slime to quit." with title "Cursor Slime"' >/dev/null 2>&1
+    exit 0
+fi
+
+if [ ! -x "$PY" ] || [ ! -f "$PET" ]; then
+    /usr/bin/osascript -e 'display alert "Cursor Slime not installed" message "Run install.sh first to set up ~/.cursor/pet/"'
+    exit 1
+fi
+
+exec "$PY" "$PET"

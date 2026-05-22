@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+# slimectl — manage the Cursor slime desktop pet from the terminal.
+# Usage: slimectl {start|stop|restart|status|logs}
+
+set -u
+PET="$HOME/.cursor/pet/slime.py"
+PY="$HOME/.cursor/pet/venv/bin/python3"
+LOG="/tmp/slime-pet.log"
+CMD="${1:-start}"
+
+is_running() { pgrep -f "pet/slime.py" >/dev/null; }
+pid()        { pgrep -f "pet/slime.py" | head -1; }
+
+case "$CMD" in
+  start)
+    if is_running; then
+      echo "already running (pid $(pid))"
+    else
+      "$PY" "$PET" >"$LOG" 2>&1 &
+      disown
+      sleep 0.3
+      if is_running; then
+        echo "started (pid $(pid))"
+      else
+        echo "failed to start. log:"
+        tail -20 "$LOG"
+        exit 1
+      fi
+    fi
+    ;;
+  stop)
+    if is_running; then
+      pkill -f "pet/slime.py"
+      echo "stopped"
+    else
+      echo "not running"
+    fi
+    ;;
+  restart)
+    pkill -f "pet/slime.py" 2>/dev/null
+    sleep 0.5
+    "$PY" "$PET" >"$LOG" 2>&1 &
+    disown
+    sleep 0.3
+    echo "restarted (pid $(pid))"
+    ;;
+  status)
+    if is_running; then
+      echo "running (pid $(pid))"
+    else
+      echo "not running"
+    fi
+    ;;
+  logs)
+    tail -50 "$LOG"
+    ;;
+  *)
+    echo "usage: slimectl {start|stop|restart|status|logs}"
+    exit 1
+    ;;
+esac

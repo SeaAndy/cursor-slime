@@ -1,0 +1,36 @@
+# ---- macOS ------------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ---- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+venv/
+.venv/
+env/
+.env
+
+# ---- Editor / IDE -----------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ---- Cursor Slime runtime artifacts ----------------------------------------
+# These are produced by install.sh / make_icon.py at runtime and never belong in git.
+*.icns
+pet-stats.jsonl
+*.bak.*
+
+# ---- Build / release artifacts ---------------------------------------------
+# Use GitHub Releases for these instead of committing.
+dist/
+build/
+*.zip
+*.tar.gz
+*.tgz
