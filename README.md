@@ -6,13 +6,30 @@
 
 A pixel-art slime desktop pet that reacts to your Cursor IDE / agent activity in real time. Frameless, transparent, always on top, no Dock icon.
 
-<p align="center">
-  <img src="docs/screenshots/state-idle.png" alt="Cursor Slime in idle state — cyan slime, calm face, low activity" width="320">
-  &nbsp;&nbsp;
-  <img src="docs/screenshots/state-working.png" alt="Cursor Slime in working state — green slime, wide eyes, active tool usage" width="320">
-  <br>
-  <em>idle (cyan) &nbsp;·&nbsp; working (green) — slime changes color &amp; expression by agent state</em>
-</p>
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="docs/screenshots/state-idle.png" alt="idle — cyan slime, calm" width="280"><br>
+      <sub><b>idle</b> · cyan</sub>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/state-thinking.png" alt="thinking — blue slime with ? bubble" width="280"><br>
+      <sub><b>thinking</b> · blue · <code>?</code></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs/screenshots/state-working.png" alt="working — green slime, wide eyes, active tool usage" width="280"><br>
+      <sub><b>working</b> · green</sub>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/state-sleeping.png" alt="sleeping — purple slime with zZz" width="280"><br>
+      <sub><b>sleeping</b> · purple · <code>zZz</code></sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center"><em>Slime changes color &amp; expression by agent state. State transitions are driven by Cursor hook events in real time.</em></p>
 
 ## What it does
 
