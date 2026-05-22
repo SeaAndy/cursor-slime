@@ -7,7 +7,11 @@
 A pixel-art slime desktop pet that reacts to your Cursor IDE / agent activity in real time. Frameless, transparent, always on top, no Dock icon.
 
 <p align="center">
-  <img src="docs/screenshots/demo.png" alt="Cursor Slime in action — pixel slime with a live stats bubble showing project, model, token estimate, tools/min, last tool and idle time" width="340">
+  <img src="docs/screenshots/state-idle.png" alt="Cursor Slime in idle state — cyan slime, calm face, low activity" width="320">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/state-working.png" alt="Cursor Slime in working state — green slime, wide eyes, active tool usage" width="320">
+  <br>
+  <em>idle (cyan) &nbsp;·&nbsp; working (green) — slime changes color &amp; expression by agent state</em>
 </p>
 
 ## What it does
