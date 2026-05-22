@@ -1,5 +1,7 @@
 # Cursor Slime
 
+**English** · [简体中文](README.zh-CN.md)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Platform: macOS](https://img.shields.io/badge/platform-macOS-lightgrey.svg)]()
 [![Python: 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)]()
@@ -142,7 +144,8 @@ If you changed the sprite and want the `.app` icon to match:
 
 ```text
 cursor-slime/
-├── README.md
+├── README.md                   # English (primary)
+├── README.zh-CN.md             # 简体中文
 ├── LICENSE
 ├── install.sh                  # macOS installer
 ├── uninstall.sh                # cleanly removes everything
